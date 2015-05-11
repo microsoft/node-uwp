@@ -1,0 +1,31 @@
+{
+  "name": "uwp",
+  "version": "1.0.0",
+  "description":
+    "Enables Universal Windows Platform (UWP) API access for Node.js (Chakra build) on Windows 10.",
+  "main": "index.js",
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Microsoft/node-uwp.git"
+  },
+  "keywords": [
+    "uwp",
+    "node",
+    "node-uwp",
+    "jsrt",
+    "chakra"
+  ],
+  "author": "jianxu@microsoft.com",
+  "license": "MIT",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/Microsoft/node-uwp/issues"
+  },
+  "homepage": "https://github.com/Microsoft/node-uwp#readme",
+  "dependencies": {
+    "nan": "^1.8.4"
+  }
+}
