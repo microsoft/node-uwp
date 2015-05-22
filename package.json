@@ -1,11 +1,11 @@
 {
   "name": "uwp",
   "version": "1.0.0",
-  "description":
-    "Enables Universal Windows Platform (UWP) API access for Node.js (Chakra build) on Windows 10.",
+  "description": "Enables Universal Windows Platform (UWP) API access for Node.js (Chakra build) on Windows 10.",
   "main": "index.js",
   "scripts": {
-    "install": "node-gyp rebuild"
+    "install": "node-gyp rebuild",
+    "test": "node test/index.js"
   },
   "repository": {
     "type": "git",

@@ -18,7 +18,7 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-var uwp = require('uwp');
+var uwp = require('../index.js');
 uwp.projectNamespace("Windows");
 
 Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(
