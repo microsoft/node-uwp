@@ -32,10 +32,10 @@ Installation
 
  * Windows 10
  * Visual Studio 2015 (RC or later)
- * Node.js build on [Windows with Chakra](https://github.com/Microsoft/node/blob/ch0.12.2/README.md#windows_with_chakra)
+ * [Node.js build with Chakra on Windows](https://github.com/Microsoft/node/blob/ch0.12.4/README.md#windows_with_chakra)
 
-Currently building node.js native addon modules on Windows with Chakra depends
-on Node.js build. See [building native addon modules with Chakra](https://github.com/Microsoft/node/blob/ch0.12.2/README.md#build_native_addon_modules_with_chakra).
+Currently building node.js native addon modules with Chakra depends
+on Node.js build. See [how to build and install native addon modules](https://github.com/Microsoft/node/blob/ch0.12.4/README.md#build_native_addon_modules_with_chakra).
 
 ```sh
 node.exe [node_repo]\deps\npm\bin\npm-cli.js install uwp --nodedir=[node_repo] --msvs_version=2015
