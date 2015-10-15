@@ -29,7 +29,7 @@ bool UWPAddOn::EnsureCoInitialized() {
     _coInitialized = SUCCEEDED(hr);
 
     if (!_coInitialized) {
-      NanThrowError("CoInitializeEx failed");
+      Nan::ThrowError("CoInitializeEx failed");
     }
   }
 
@@ -62,7 +62,7 @@ void UWPAddOn::ReleaseKeepAlive() {
 }
 
 void UWPAddOn::Init(Handle<Object> target) {
-  NanScope();
+  Nan::HandleScope scope;
 
   NodeUtils::g_mainThreadId =
     std::this_thread::get_id();  // Capture entering thread id
@@ -80,43 +80,43 @@ void UWPAddOn::Init(Handle<Object> target) {
   },
     /*projectionEnqueueContext*/nullptr);
   if (err != JsNoError) {
-    NanThrowError("JsSetProjectionEnqueueCallback failed");
+    Nan::ThrowError("JsSetProjectionEnqueueCallback failed");
     return;
   }
 
-  NODE_SET_METHOD(target, "projectNamespace", ProjectNamespace);
-  NODE_SET_METHOD(target, "close", Close);
+  Nan::SetMethod(target, "projectNamespace", ProjectNamespace);
+  Nan::SetMethod(target, "close", Close);
 }
 
 NAN_METHOD(UWPAddOn::ProjectNamespace) {
-  NanScope();
+  Nan::HandleScope scope;
 
-  if (!args[0]->IsString()) {
-    NanThrowError("Argument must be a string");
-    NanReturnUndefined();
+  if (!info[0]->IsString()) {
+    Nan::ThrowTypeError("Argument must be a string");
+    return;
   }
 
   if (!s_instance.EnsureCoInitialized()) {
-    NanReturnUndefined();
+    return;
   }
 
-  String::Value name(args[0]);
+  String::Value name(info[0]);
   if (JsProjectWinRTNamespace(reinterpret_cast<wchar_t*>(*name)) != JsNoError) {
-    NanThrowError("JsProjectWinRTNamespace failed");
-    NanReturnUndefined();
+    Nan::ThrowError("JsProjectWinRTNamespace failed");
+	return;
   }
 
   // Keep Node alive once successfully projected a UWP namespace
   s_instance.EnsureKeepAlive();
-  NanReturnUndefined();
+  return;
 }
 
 NAN_METHOD(UWPAddOn::Close) {
-  NanScope();
+  Nan::HandleScope scope;
 
   s_instance.ReleaseKeepAlive();
   s_instance.EnsureCoUninitialized();
-  NanReturnUndefined();
+  return;
 }
 
 NODE_MODULE(uwp, UWPAddOn::Init);
