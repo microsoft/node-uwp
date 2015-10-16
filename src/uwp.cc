@@ -103,7 +103,7 @@ NAN_METHOD(UWPAddOn::ProjectNamespace) {
   String::Value name(info[0]);
   if (JsProjectWinRTNamespace(reinterpret_cast<wchar_t*>(*name)) != JsNoError) {
     Nan::ThrowError("JsProjectWinRTNamespace failed");
-	return;
+    return;
   }
 
   // Keep Node alive once successfully projected a UWP namespace
