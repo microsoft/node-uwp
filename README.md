@@ -30,15 +30,14 @@ Installation
 
 ### Prerequisites
 
- * Windows 10
- * Visual Studio 2015 (RC or later)
- * [Node.js build with Chakra on Windows](https://github.com/Microsoft/node/blob/ch0.12/README.md#windows_with_chakra)
+ * Windows 10 [November update](http://windows.microsoft.com/en-us/windows-10/windows-update-faq)
+ * [Visual Studio](https://www.visualstudio.com/vs-2015-product-editions)
+ * [Node.js Tools for Windows IoT](https://aka.ms/nt4winiot)
 
-Currently building node.js native addon modules with Chakra depends
-on Node.js build. See [how to build and install native addon modules](https://github.com/Microsoft/node/blob/ch0.12/README.md#build_native_addon_modules_with_chakra).
+Run under Node.js (Chakra) command prompt:
 
 ```sh
-node.exe [node_repo]\deps\npm\bin\npm-cli.js install uwp --nodedir=[node_repo]
+npm install uwp
 ```
 
 APIs
