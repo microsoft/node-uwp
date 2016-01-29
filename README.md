@@ -32,7 +32,7 @@ Installation
 
  * Windows 10 [November update](http://windows.microsoft.com/en-us/windows-10/windows-update-faq)
  * [Visual Studio](https://www.visualstudio.com/vs-2015-product-editions)
- * [Node.js Tools for Windows IoT](https://aka.ms/nt4winiot)
+ * [Node.js (Chakra)](http://aka.ms/node-chakra-installer)
 
 Run under Node.js (Chakra) command prompt:
 
