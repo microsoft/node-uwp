@@ -58,3 +58,9 @@ Project a UWP namespace of given name.
 
 Close all UWP handles used by this package. Call this when all UWP usage is
 completed.
+
+---------------------------------------------------------------------------
+Checkout our OSS effort with
+[Node-ChakraCore](https://github.com/nodejs/node-chakracore). It supports the
+most recent version of node.js and will also be useful if you are on Windows 7
+or Windows 8.1. Note: <b>It does not support UWP.</b>
