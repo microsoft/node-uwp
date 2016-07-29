@@ -18,10 +18,12 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-module.exports = require('./build/release/uwp.node');
+const uwp = module.exports = require('./build/release/uwp.node');
 
-// Temporary workaround of chakra requiring window.setTimeout when posting
-// errors during async completion
-global.window = {
-  setTimeout: setTimeout
+const nativeProjectNamespace = uwp.projectNamespace;
+uwp.projectNamespace = function(namespace) {
+  nativeProjectNamespace.call(uwp, namespace);
+  return namespace.split('.').reduce(function(prev, name) {
+    return prev[name];
+  }, global);
 };

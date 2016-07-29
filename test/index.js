@@ -18,18 +18,18 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-var uwp = require('../index.js');
-uwp.projectNamespace("Windows");
+const uwp = require('../index.js');
+const Windows = uwp.projectNamespace('Windows');
 
 Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(
-  "sample.dat", Windows.Storage.CreationCollisionOption.replaceExisting)
+  'sample.dat', Windows.Storage.CreationCollisionOption.replaceExisting)
   .done(
     function (file) {
-      console.log("ok");
-      uwp.close();
+      console.log('ok');
+      uwp.close(); // all async operations are completed, release uwp
     },
     function (error) {
-      console.error("error", error);
-      uwp.close();
+      console.error('error', error);
+      uwp.close(); // all async operations are completed, release uwp
     }
 );

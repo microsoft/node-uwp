@@ -8,18 +8,18 @@ Example
 -------
 
 ```javascript
-var uwp = require('uwp');
-uwp.projectNamespace("Windows");
+const uwp = require('uwp');
+const Windows = uwp.projectNamespace('Windows');
 
 Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(
-  "sample.dat", Windows.Storage.CreationCollisionOption.replaceExisting)
+  'sample.dat', Windows.Storage.CreationCollisionOption.replaceExisting)
   .done(
     function (file) {
-      console.log("ok");
+      console.log('ok');
       uwp.close(); // all async operations are completed, release uwp
     },
     function (error) {
-      console.error("error", error);
+      console.error('error', error);
       uwp.close(); // all async operations are completed, release uwp
     }
 );
@@ -30,7 +30,7 @@ Installation
 
 ### Prerequisites
 
- * Windows 10 [November update](http://windows.microsoft.com/en-us/windows-10/windows-update-faq)
+ * Windows 10 [1511 or above](http://windows.microsoft.com/en-us/windows-10/windows-update-faq)
  * [Visual Studio](https://www.visualstudio.com/vs-2015-product-editions)
  * [Node.js (Chakra)](http://aka.ms/node-chakra-installer)
 
