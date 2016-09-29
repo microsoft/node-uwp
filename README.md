@@ -9,7 +9,7 @@ Example
 
 ```javascript
 const uwp = require('uwp');
-const Windows = uwp.projectNamespace('Windows');
+uwp.projectNamespace('Windows');
 
 Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(
   'sample.dat', Windows.Storage.CreationCollisionOption.replaceExisting)
