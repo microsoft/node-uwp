@@ -1,6 +1,6 @@
 {
   "name": "uwp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enables Universal Windows Platform (UWP) API access for Node.js (Chakra build) on Windows 10.",
   "main": "index.js",
   "scripts": {
